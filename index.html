@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Cherub</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="icon" href="css/images/wings.ico" type="image/gif" sizes="16x16">
+	<link rel="stylesheet" href="css/main.css"/>
+	<link rel="stylesheet" href="css/search.css"/>
+</head>
+<body class="is-preload">
+	<!-- Header -->
+	<!-- <span>
+	<img src="css/images/Cherub.png" alt="Cherub Logo">
+</span> -->
+<div id="header">
+	<span>
+		<img src="css/images/Cherub.png" alt="Cherub Logo" style="width:25%;">
+	</span>
+	<h1>Hi. This is Cherub.</h1>
+	<p> Know the crowd level in public spaces and buildings before you even leave the house.
+		<br />
+		Project CHERUB promotes the "new normal" by allowing people to plan for social distancing
+		<br />
+		and safe public outings.</p>
+	</div>
+	<!-- Main -->
+	<div id="main" style = "padding-bottom: 0px;">
+		<header class="major container medium">
+			<h2>Search for nearby locations
+				<br />
+				Check a specific store
+				<br />
+				Be Smart & Stay Safe</h2>
+			</header>
+		</div>
+		<div class="s013">
+			<form id = "searchRequest">
+				<div class="inner-form">
+					<div class="left">
+						<div class="input-wrap first">
+							<div class="input-field first">
+								<label>ZIP CODE</label>
+								<input id="lookup" type="text" placeholder="ex: 01752" />
+							</div>
+						</div>
+						<div class="input-wrap second">
+							<div class="input-field second">
+								<label>CATEGORY</label>
+								<div class="input-select" style="padding-top: 2px;">
+									<!-- <input type="text" placeholder="ex: food, service, bar, hotel" /> -->
+									<select data-trigger="" name="choices-single-defaul" id="select-option">
+										<option value="Shopping" placeholder="">Shopping</option>
+										<option value="Groceries">Groceries</option>
+										<option value="Entertainment">Entertainment</option>
+										<option value="Restaurant">Restaurant</option>
+										<option value="Education">Education</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button class="btn-search" id="submitbtn" type="submit">SEARCH</button>
+				</div>
+			</form>
+			<div class="container">
+				<ul class="responsive-table" id = "table">
+					<!-- Firebase -->
+				</ul>
+			</div>
+		</div>
+		<script src="js/extention/choices.js"></script>
+		<script>
+		const choices = new Choices('[data-trigger]',
+		{
+			searchEnabled: false,
+			itemSelectText: '',
+		});
+
+		</script>
+		<!-- Footer -->
+		<div id="footer">
+			<div class="container medium">
+				<header class="major last">
+					<h2>Questions or comments?</h2>
+				</header>
+				<p>We are happy that you chose our website! Please leave any comments or concerns and we will get back to you shortly. Your feedback goes a long way, Thank You!</p>
+				<form method="post" action="#">
+					<div class="row">
+						<div class="col-6 col-12-mobilep">
+							<input type="text" name="name" placeholder="Name" />
+						</div>
+						<div class="col-6 col-12-mobilep">
+							<input type="email" name="email" placeholder="Email" />
+						</div>
+						<div class="col-12">
+							<textarea name="message" placeholder="Message" rows="6"></textarea>
+						</div>
+						<div class="col-12">
+							<ul class="actions special">
+								<li><input type="submit" value="Send Message" /></li>
+							</ul>
+						</div>
+					</div>
+				</form>
+				<ul class="copyright">
+					<li>&copy; Cherub. All rights reserved.</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Scripts -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/browser.min.js"></script>
+		<script src="js/breakpoints.min.js"></script>
+		<script src="js/util.js"></script>
+		<script src="js/main.js"></script>
+		<!-- Firebase Stuff -->
+		<!-- Firebase Stuff -->
+		<!-- Firebase Stuff -->
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+		https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+
+		<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyAjtz75hmYYkJlTfxrNYvCkfAVHpc2OWdk",
+  			authDomain: "cherub-9df2c.firebaseapp.com",
+  			databaseURL: "https://cherub-9df2c.firebaseio.com",
+  			projectId: "cherub-9df2c",
+  			storageBucket: "cherub-9df2c.appspot.com",
+  			messagingSenderId: "628606800478",
+  			appId: "1:628606800478:web:f4b5b9fb3ce266a94c1acf",
+  			measurementId: "G-5L9Q0202YF"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+		// make auth and firestore references
+		const auth = firebase.auth();
+		const db = firebase.firestore();
+		</script>
+		<script src="js/dom.js"></script>
+	</body>
+	</html>
